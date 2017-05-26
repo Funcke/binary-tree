@@ -17,7 +17,9 @@ namespace tree{
             bool IsBigger(const double val);
             bool IsSmaller(const double val);
             void HowMany(const double val, int *counter);
-
+			void Sum(double *sum);
+			void NumOfNodes(int *num);
+			double Average();
     };
 }
 

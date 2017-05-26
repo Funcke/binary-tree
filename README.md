@@ -13,3 +13,6 @@ Functions provided by Node class:
 - IsBigger <- looks for any bigger Value in the tree than the given
 - IsSmaller <- looks for any smaller value in the tree than given
 - HowMany <- looks for the number of occunrences of the given value and returns the number
+- Sum <- Gets the sum of all node values !!!! Not Tested Yet!!!!
+- NumOfNodes <- Counts the sum of Nodes in the tree !!!! Not tested !!!!
+- Average <- gets the NumOfNodes and the sum and calculates the verage !!!!Not Tested Yet !!!!
