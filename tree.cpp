@@ -138,6 +138,41 @@ namespace tree{
                 this->Right->HowMany(val, counter);
             }
         }
+		
+		void Node::Sum(double *sum){
+			if(this->Left != NULL){
+				this->Left->Sum(sum);
+			}
+			if(this->Right != NULL){
+				this->Right->Sum(sum);
+			}
+			
+			*sum += this->val;
+		}
+		
+		void Node::NumOfNodes(int *num){
+			if(this->Left != NULL){
+				this->Left->NumOfNodes(num);
+			}
+			if(this->Right != NULL){
+				this->Right->NumOfNodes(num);
+			}
+			
+			*num += 1;
+		}
+		
+		double Node::Average(){
+			double sum = 0.0;
+			int num = 0;
+			
+			this->Sum(&sum);
+			this->NumOfNodes(&num);
+			
+			if(!(num <= 0))
+				return sum/num;
+			else 
+				return -1.0;
+		}
 }
 
 int main(){
