@@ -2,12 +2,13 @@
 #include <string>
 #include "tree.hpp"
 
-#define __DEBUG__
+//#define __DEBUG__
 
 using namespace std;
 using namespace tree;
 
 namespace tree{
+        
         Node::Node(){
             this->val = 0.0;
             this->Left = NULL;
@@ -23,8 +24,10 @@ namespace tree{
         Node::Node(Node *begin){
             if(begin != NULL){
                 this->val = begin->val;
+                
                 if(begin->Left != NULL)
                     this->Left = new Node(begin->Left);
+                
                 if(begin->Right != NULL)
                     this->Right = new Node(begin->Right);
             }else{
@@ -64,6 +67,7 @@ namespace tree{
 
         bool Node::IsBigger(const double val){
             cout << this->val << endl;
+            
             if(this->val < val)
                 return true;
             else{
@@ -92,6 +96,7 @@ namespace tree{
 
         bool Node::IsSmaller(const double val){
             cout << this->val << endl;
+            
             if(this->val > val)
                 return true;
             else{
@@ -106,6 +111,7 @@ namespace tree{
                         return true;
                     }
                 }
+
                 if((this->Right != NULL)){
 #ifdef __DEBUG__
                     cout << "in right" << endl;
@@ -120,31 +126,50 @@ namespace tree{
 
         void Node::HowMany(const double val, int *counter){
             if(this->val == val){
+
 #ifdef __DEBUG__
                 cout << "Im Wert" << endl;
 #endif
+
                 *counter += 1;
             }
+
             if(this->Left != NULL){
+
 #ifdef __DEBUG__
                 cout << "in left" << endl;
 #endif
+
                 this->Left->HowMany(val, counter);
             }
+
             if(this->Right != NULL){
+
 #ifdef __DEBUG__
                 cout << "In Right" << endl;
 #endif
+
                 this->Right->HowMany(val, counter);
             }
         }
 		
 		void Node::Sum(double *sum){
 			if(this->Left != NULL){
+
+#ifdef __DEBUG__
+                cout << "in left" << endl;
+#endif
+
 				this->Left->Sum(sum);
 			}
+
 			if(this->Right != NULL){
-				this->Right->Sum(sum);
+				
+#ifdef __DEBUG__
+                cout << "In right" << endl;
+#endif
+
+                this->Right->Sum(sum);
 			}
 			
 			*sum += this->val;
@@ -152,9 +177,19 @@ namespace tree{
 		
 		void Node::NumOfNodes(int *num){
 			if(this->Left != NULL){
+
+#ifdef __DEBUG__
+                cout << "In left" << endl;
+#endif
+
 				this->Left->NumOfNodes(num);
 			}
+
 			if(this->Right != NULL){
+
+#ifdef __DEBUG__
+                cout << "In right" << endl;
+#endif
 				this->Right->NumOfNodes(num);
 			}
 			
