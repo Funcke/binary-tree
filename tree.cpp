@@ -153,6 +153,8 @@ namespace tree{
             }
         }
 		
+//  !--- Test required --!
+
 		void Node::Sum(double *sum){
 			if(this->Left != NULL){
 
@@ -175,6 +177,8 @@ namespace tree{
 			*sum += this->val;
 		}
 		
+//  !--- Test required --!
+
 		void Node::NumOfNodes(int *num){
 			if(this->Left != NULL){
 
@@ -196,6 +200,8 @@ namespace tree{
 			*num += 1;
 		}
 		
+//  !--- Test required --!
+
 		double Node::Average(){
 			double sum = 0.0;
 			int num = 0;
